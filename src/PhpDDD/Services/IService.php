@@ -1,3 +1,3 @@
 <?php namespace PhpDDD\Services;
 
-interface IService(){}
+interface IService{}
