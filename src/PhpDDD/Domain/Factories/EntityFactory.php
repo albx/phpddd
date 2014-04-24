@@ -1,7 +1,7 @@
 <?php namespace PhpDDD\Domain\Factories;
 
 use PhpDDD\Domain\Entities\IEntity;
-use PhpDDD\Domain\Exceptions as DomainExceptions;
+use PhpDDD\Domain\Exceptions\CouldNotCreateEntityException;
 
 /**
 *	This class provides a generic method to create an instance of an entity using Factory Method.
@@ -19,7 +19,7 @@ abstract class EntityFactory{
 		$entity = new $class_name();
 		
 		if(!($entity instanceof IEntity)){
-			throw new DomainExceptions\CouldNotCreateEntityException("The object must inherit IEntity interface");
+			throw new CouldNotCreateEntityException("The object must inherit IEntity interface");
 		}
 		
 		if(!empty($fields)){
